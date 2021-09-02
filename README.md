@@ -19,4 +19,7 @@ Dicho archivo se ejecuta con el siguiente comando: `java -jar prueba-java-0.0.1-
 
 La aplicación de consola solicitará los parámetros de entrada para generar el contador de salida final.
 
-Para hacer el despliegue en contenedor, se debe utilizar el siguiente comando: 
+Para hacer el despliegue en contenedor, se debe utilizar el siguiente comando: `docker build –t`
+
+
+> PD: El proyecto al ser de consola, no requiere puertos de exposición. Siendo requerido únicamente ejecutar JAR sin depender de Docker.
