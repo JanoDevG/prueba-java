@@ -33,6 +33,8 @@ public class Matrix {
      * @param z is a domain
      */
     private void createMatrix(final int r, final int c, final int z) {
+        assert r >= 0;
+        assert c >= 0;
         int[][] matrix = new int[r][c];
         for (int i = 0; i < r; i++) {
             for (int j = 0; j < c; j++) {
