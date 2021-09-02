@@ -11,7 +11,7 @@ import java.util.Scanner;
  * @Author: Alejandro Gutiérrez
  */
 @SpringBootApplication
-public class PruebaJavaApplication extends Matrix {
+public class JavaApplication {
 
     private static final Scanner SCANNER = new Scanner(System.in);
 
@@ -21,7 +21,7 @@ public class PruebaJavaApplication extends Matrix {
      * @param args the input arguments
      */
     public static void main(String[] args) {
-        SpringApplication.run(PruebaJavaApplication.class, args);
+        SpringApplication.run(JavaApplication.class, args);
         byte r; // variable dimencion de matriz (filas)
         byte c; // variable dimencion de matriz (columnas)
         byte x; // variable dimencion de matriz para sumatoria (columnas)
@@ -41,11 +41,8 @@ public class PruebaJavaApplication extends Matrix {
         z = SCANNER.nextByte();
 
         // crear matríz basada en dimenciones ingresadas
-        Matrix matrixClass = new Matrix();
-        byte[][] matrix = matrixClass.createMatrix(r, c, z);
+        Matrix matrixClass = new Matrix(r, c, z);
 
-        System.out.println("La Sumatoria por las coordenadas seleccionadas es: ".concat(String.valueOf(additionArray(matrix, x, y))));
+        System.out.println("La Sumatoria por las coordenadas seleccionadas es: ".concat(String.valueOf(matrixClass.additionArray(x, y))));
     }
-
-
 }

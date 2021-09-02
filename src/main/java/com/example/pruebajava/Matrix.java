@@ -1,82 +1,64 @@
 package com.example.pruebajava;
 
 /**
- * The type Matrix.
+ * @Author: Alejandro Gutiérrez
  */
 public class Matrix {
 
-    private byte[][] matrix;
+    private int[][] matrix;
 
-    /**
-     * instantiating a new matrix without arguments
-     */
     public Matrix() {
     }
 
     /**
-     * Instantiates a new Matrix with arguments.
+     * The method construct this class
      *
-     * @param matrix the matrix (array 2D)
+     * @param r is a coordinate
+     * @param c is a coordinate
+     * @param z is a domain
      */
-    public Matrix(final byte[][] matrix) {
-        setMatrix(matrix);
+    public Matrix(final int r, final int c, final int z) {
+        createMatrix(r, c, z);
     }
 
-    /**
-     * Get matrix byte [ ] [ ].
-     *
-     * @return the byte [ ] [ ]
-     */
-    protected byte[][] getMatrix() {
+    protected int[][] getMatrix() {
         return matrix;
     }
 
     /**
-     * Sets matrix.
+     * Method from create matrix
      *
-     * @param matrix the matrix
+     * @param r is a coordinate
+     * @param c is a coordinate
+     * @param z is a domain
      */
-    protected void setMatrix(final byte[][] matrix) {
+    private void createMatrix(final int r, final int c, final int z) {
+        int[][] matrix = new int[r][c];
+        for (int i = 0; i < r; i++) {
+            for (int j = 0; j < c; j++) {
+                if (i == 0 && z > 1) { // Z = Z + R –1
+                    for (int k = 0; k < c; k++) {
+                        matrix[0][k] = (int) (z + (j + 1) - 1);
+                    }
+                    break;
+                }
+                matrix[i][j] = (int) (z + (i + 1) - 1);
+            }
+        }
         this.matrix = matrix;
     }
 
     /**
-     * Create matrix byte [ ] [ ].
+     * summary of values into matrix
      *
-     * @param r the r
-     * @param c the c
-     * @param z the z
-     * @return the byte [ ] [ ]
+     * @param x is a coordinate
+     * @param y is a coordinate
      */
-    protected byte[][] createMatrix(final byte r, final byte c, final byte z) {
-        byte[][] matrix = new byte[r][c];
-        for (byte i = 0; i < r; i++) {
-            for (byte j = 0; j < c; j++) {
-                if (i == 0 && z > 1) { // Z = Z + R –1
-                    for (byte k = 0; k < c; k++) {
-                        matrix[0][k] = (byte) (z + (j + 1) - 1);
-                    }
-                    break;
-                }
-                matrix[i][j] = (byte) (z + (i + 1) - 1);
-            }
-        }
-        return matrix;
-    }
-
-    /**
-     * Addition array byte.
-     *
-     * @param matrix the matrix
-     * @param x      the x
-     * @param y      the y
-     * @return with the summation with the selected limits of the matrix
-     */
-    protected static byte additionArray(final byte[][] matrix, final byte x, final byte y) {
-        byte addition = 0;
-        for (byte i = 0; i < y; i++) {
-            for (byte j = 0; j < x; j++) {
-                addition += matrix[i][j];
+    protected int additionArray(final int x, final int y) {
+        int addition = 0;
+        for (int i = 0; i < y; i++) {
+            for (int j = 0; j < x; j++) {
+                addition += this.matrix[i][j];
             }
         }
         return addition;
