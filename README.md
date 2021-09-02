@@ -6,7 +6,7 @@
      :speech_balloon: : janodevg@outlook.cl
 
 ---
-Este Proyecto SpringBoot tiene la finalidad de operar con una matríz para reajustar sus dimenciones, contenido y contador final en base a los input ingresados.
+Este Proyecto SpringBoot tiene la finalidad de operar con una matríz para reajustar sus dimensiones, contenido y contador final en base a los input ingresados.
 
 ## Compilación del proyecto
 Para la compilación del proyecto, ejecutar el siguiente comando:
